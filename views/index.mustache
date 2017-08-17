@@ -7,16 +7,22 @@
 
   </head>
   <body>
-    <div class = "todo-bar">
-      <form action="\" method="post">
-        <input type = "text" name = "todo" placeholder="Add a todo"/>
-        <button type = "submit">Submit</button>
-      </form>
-    </div>
-    <div class = "todo-items">
-      {{#todos}}
-      <p><input type = "checkbox">{{.}}</input></p>
-        {{/todos}}
+    <div class = "wrapper">
+      <div class = "todo-bar">
+        <form action="/" method="post">
+          <input type = "text" name = "todo" placeholder="Add a todo"/>
+          <button type = "submit">Submit</button>
+        </form>
       </div>
+      <div class = "todo-items">
+        {{#todos}}
+        <p>
+          {{.}}
+          <button type = "submit">Mark Complete</button>
+        </p>
+        {{/todos}}
+
+      </div>
+    </div>
   </body>
 </html>

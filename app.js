@@ -5,8 +5,8 @@ const path = require('path');
 const mustache = require('mustache-express');
 const bodyParser = require('body-parser');
 
-const todos = ["do a thing"];
-
+const todos = [];
+const done = [];
 
 app.engine('mustache', mustache());
 app.set('views', './views');
@@ -24,8 +24,9 @@ app.get('/', function (req, res){
 app.post('/', function(req, res){
   todos.push(req.body.todo);
   res.redirect('/');
-
 });
+
+
 
 app.listen(port, function(){
   console.log("listening")
