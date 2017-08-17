@@ -5,6 +5,7 @@ const path = require('path');
 const mustache = require('mustache-express');
 const bodyParser = require('body-parser');
 
+const todos = ["do a thing"];
 
 
 app.engine('mustache', mustache());
@@ -17,12 +18,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 
 app.get('/', function (req, res){
-  res.render('index');
+  res.render('index', { todos: todos});
 });
 
 app.post('/', function(req, res){
-  let newTodo = req.body.addtodo;
-  res.send(newTodo);
+  todos.push(req.body.todo);
+  res.redirect('/');
+
 });
 
 app.listen(port, function(){
