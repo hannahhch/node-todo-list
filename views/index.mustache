@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Todo List</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+  </head>
+  <body>
+    <div class = "todo-bar">
+      <form action="\" method="post">
+        <input type = "text" name = "addtodo" placeholder="Add a todo"/>
+        <button type = "submit">Submit</button>
+      </form>
+    </div>
+    <div class = "todo-items">
+      {{#}}
+      <p><input type = "checkbox">{{name}}</input></p>
+        {{/}}
+      </div>
+  </body>
+</html>

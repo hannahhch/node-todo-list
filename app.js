@@ -5,9 +5,7 @@ const path = require('path');
 const mustache = require('mustache-express');
 const bodyParser = require('body-parser');
 
-const todos = [
-  "Wash the car"
-]
+
 
 app.engine('mustache', mustache());
 app.set('views', './views');
@@ -19,13 +17,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 
 app.get('/', function (req, res){
-  res.render('index', { todos: todos});
+  res.render('index');
 });
 
 app.post('/', function(req, res){
-  todos.push(req.body.todo);
-  res.redirect('/');
-})
+  let newTodo = req.body.addtodo;
+  res.send(newTodo);
+});
 
 app.listen(port, function(){
   console.log("listening")
