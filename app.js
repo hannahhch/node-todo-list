@@ -5,8 +5,8 @@ const path = require('path');
 const mustache = require('mustache-express');
 const bodyParser = require('body-parser');
 
-const todos = [];
-const done = [];
+let todos = [];
+let doneArr = [];
 
 app.engine('mustache', mustache());
 app.set('views', './views');
@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 
 app.get('/', function (req, res){
-  res.render('index', { todos: todos});
+  res.render('index', { todos: todos, doneArr:doneArr});
 });
 
 app.post('/', function(req, res){
@@ -26,7 +26,11 @@ app.post('/', function(req, res){
   res.redirect('/');
 });
 
-
+app.post('/mark', function(req, res){
+  doneArr.push(req.body.complete);
+  todos.pop(this);
+  res.redirect('/');
+});
 
 app.listen(port, function(){
   console.log("listening")

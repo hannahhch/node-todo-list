@@ -16,11 +16,15 @@
       </div>
       <div class = "todo-items">
         {{#todos}}
-        <p>
-          {{.}}
+        <form class = "" action = "/mark" value = {{.}} method="post">
           <button type = "submit">Mark Complete</button>
-        </p>
+          <input type = "text" name = "complete" value = {{.}} readonly>
+        </form>
         {{/todos}}
+        <h2>Completed</h2>
+        {{#doneArr}}
+        <p>{{.}}</p>
+        {{/doneArr}}
 
       </div>
     </div>
