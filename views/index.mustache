@@ -4,29 +4,37 @@
     <meta charset="utf-8">
     <title>Todo List</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
-
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Quicksand" rel="stylesheet">
   </head>
   <body>
     <div class = "wrapper">
+      <div class = 'headers'>
+        <span>todos</span>
+        <span>completed</span>
+      </div>
+
+      <div class = 'flex'>
       <div class = "todo-bar">
         <form action="/" method="post">
           <input type = "text" name = "todo" placeholder="Add a todo"/>
           <button type = "submit">Submit</button>
         </form>
-      </div>
-      <div class = "todo-items">
         {{#todos}}
-        <form class = "" action = "/mark" value = {{.}} method="post">
-          <button type = "submit">Mark Complete</button>
-          <input type = "text" name = "complete" value = {{.}} readonly>
+        <form class = "" action = "/mark"  method="post">
+          <p>
+          <li><button type = "submit" name = 'complete' value = "{{.}}">Mark Complete</button>
+          <span>{{.}}</span></li>
+        </p>
         </form>
+
         {{/todos}}
-        <h2>Completed</h2>
+      </div>
+      <div class = "todo-complete">
+
         {{#doneArr}}
         <p>{{.}}</p>
         {{/doneArr}}
-
-      </div>
     </div>
+  </div>
   </body>
 </html>

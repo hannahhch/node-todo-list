@@ -1,4 +1,27 @@
 .wrapper {
-  margin: 0 auto;
-  width: 80%;
+  width: 60%;
+  margin: 10% 20%;
+}
+
+h1 {
+  font-family: 'Quicksand', sans-serif;
+}
+
+.headers{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.flex{
+  display: flex;
+  justify-content: space-between;
+}
+
+.todo-bar, .todo-complete{
+  width: 40%;
+}
+
+span{
+  font-family: 'Quicksand', sans-serif;
 }

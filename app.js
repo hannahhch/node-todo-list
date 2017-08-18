@@ -28,7 +28,10 @@ app.post('/', function(req, res){
 
 app.post('/mark', function(req, res){
   doneArr.push(req.body.complete);
-  todos.pop(this);
+  const ix = todos.indexOf(req.body.complete);
+  if (ix > -1) {
+    todos.splice(ix, 1);
+  }
   res.redirect('/');
 });
 
