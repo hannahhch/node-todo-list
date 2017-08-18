@@ -1,15 +1,25 @@
+body{
+  background-color: #d8bfd8	;
+}
+
+
 .wrapper {
   width: 60%;
+  height: 60vh;
   margin: 10% 20%;
+  padding: 20px;
+  background-color: white;
 }
 
 h1 {
   font-family: 'Quicksand', sans-serif;
+  font-size: 45px;
 }
 
 .headers{
   display: flex;
   justify-content: space-between;
+  margin-bottom: 15px;
 }
 
 
@@ -24,4 +34,16 @@ h1 {
 
 span{
   font-family: 'Quicksand', sans-serif;
+}
+
+li{
+  list-style: none;
+}
+
+input{
+  width: 200px;
+  height:40px;
+  font-family: 'Quicksand', sans-serif;
+  padding-left: 10px;
+
 }

@@ -9,20 +9,19 @@
   <body>
     <div class = "wrapper">
       <div class = 'headers'>
-        <span>todos</span>
-        <span>completed</span>
+        <h1><strong>todos</strong></h1>
+        <h1>done</h1>
       </div>
 
       <div class = 'flex'>
       <div class = "todo-bar">
         <form action="/" method="post">
-          <input type = "text" name = "todo" placeholder="Add a todo"/>
-          <button type = "submit">Submit</button>
+          <input type = "text" name = "todo" placeholder="what needs to be done?"/>
         </form>
         {{#todos}}
         <form class = "" action = "/mark"  method="post">
           <p>
-          <li><button type = "submit" name = 'complete' value = "{{.}}">Mark Complete</button>
+          <li><button type = "submit" name = 'complete' id = 'mark_complete' value = "{{.}}"></button>
           <span>{{.}}</span></li>
         </p>
         </form>
